@@ -1,0 +1,70 @@
+﻿@model IEnumerable<RentalAndSaleOfApartments.Models.Sale>
+
+@{
+    ViewData["Title"] = "GetSale";
+}
+
+<h1>GetSale</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SizeInM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnersPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isRenovation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostedOnSite)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rooms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SizeInM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnersPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isRenovation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostedOnSite)
+            </td>
+            <td>
+                <a asp-action="EditS" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="DeleteSale" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
